@@ -40,8 +40,52 @@ app.post('/webhook/', function (req, res) {
 			} else if (text === 'demos') {
 				sendDemosMessage(sender)
 				continue
-			}
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			} else if (text === 'Merch') {
+				sendTextMessage(sender, "Merch will be coming really soon :) ")
+				continue
+			} else if (text === 'merch') {
+				sendTextMessage(sender, "Merch will be coming really soon :) ")
+				continue
+			} else if (text === 'Hey') {
+				sendTextMessage(sender, "Hello there.")
+				continue
+			} else if (text === 'hey') {
+				sendTextMessage(sender, "Hello there.")
+				continue
+			} else if (text === 'Hello') {
+				sendTextMessage(sender, "Hey.")
+				continue
+			} else if (text === 'hello') {
+				sendTextMessage(sender, "Hey.")
+				continue
+			} else if (text === 'Hey Eternity') {
+				sendTextMessage(sender, "What's up, Stranger?")
+				continue
+			} else if (text === 'hey Eternity') {
+				sendTextMessage(sender, "What's up, Stranger?")
+				continue
+			} else if (text === 'Hello Eternity') {
+				sendTextMessage(sender, "Hey there, Stranger.")
+				continue
+			} else if (text === 'hello Eternity') {
+				sendTextMessage(sender, "Hey there, Stranger.")
+				continue
+			} else if (text === 'Hey eternity') {
+				sendTextMessage(sender, "*Eternity")
+				sendTextMessage(sender, "lol")
+				continue
+			} else if (text === 'hey eternity') {
+				sendTextMessage(sender, "*Eternity")
+				sendTextMessage(sender, "lol")
+				continue
+			} else if (text === 'Hello eternity') {
+				sendTextMessage(sender, "*Eternity")
+				sendTextMessage(sender, "lol")
+				continue
+			} else if (text === 'hello eternity') {
+				sendTextMessage(sender, "*Eternity")
+				sendTextMessage(sender, "lol")
+				continue
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
