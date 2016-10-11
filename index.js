@@ -71,22 +71,34 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Hey there, Stranger.")
 				continue
 			} else if (text === 'Hey eternity') {
-				sendTextMessage(sender, "*Eternity")
 				sendTextMessage(sender, "lol")
+					sendTextMessage(sender, "*Eternity")
 				continue
 			} else if (text === 'hey eternity') {
-				sendTextMessage(sender, "*Eternity")
 				sendTextMessage(sender, "lol")
+					sendTextMessage(sender, "*Eternity")
 				continue
 			} else if (text === 'Hello eternity') {
-				sendTextMessage(sender, "*Eternity")
 				sendTextMessage(sender, "lol")
+					sendTextMessage(sender, "*Eternity")
 				continue
 			} else if (text === 'hello eternity') {
-				sendTextMessage(sender, "*Eternity")
 				sendTextMessage(sender, "lol")
+					sendTextMessage(sender, "*Eternity")
 				continue
-			}
+			} else if (text === '#eternityfam') {
+				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
+				continue
+			} else if (text === 'you suck') {
+				 sendTextMessage(sender, "and you swallow :)")
+				 continue
+			 } else if (text === 'You suck') {
+ 				 sendTextMessage(sender, "and you swallow :)")
+ 				 continue
+ 			 } else if (text === 'You Suck') {
+ 				 sendTextMessage(sender, "and you swallow :)")
+ 				 continue
+ 			 }
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
@@ -181,7 +193,7 @@ function sendDemosMessage(sender) {
 				"elements": [{
 					"title": "Demos",
 					"subtitle": "Send Your Demos Here",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"image_url": "https://scontent.fath3-2.fna.fbcdn.net/v/t1.0-9/12932665_1673324449584569_136873123934711253_n.jpg?oh=ed904df81533b5f2a9596b163fd54814&oe=589C8B4E",
 					"buttons": [{
 						"type": "web_url",
 						"url": "http://www.eternitynetwork.net",
