@@ -35,7 +35,7 @@ app.post('/webhook/', function (req, res) {
 		if (event.message && event.message.text) {
 			let text = event.message.text
 			if (text === 'Generic') {
-				sendGenericMessage(sender)
+				sendDemosMessage(sender)
 				continue
 			}
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
@@ -123,36 +123,41 @@ function sendGenericMessage(sender) {
 	})
 }
 
-function sendDemosMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "Demos",
-          elements: [{
-            title: "Demos",
-            subtitle: "Send us your Demos here:",
-            item_url: "http://www.eternitynetwork.net",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
-            buttons: [{
-              type: "web_url",
-              url: "http://www.eternitynetwork.net",
-              title: "Submit Your Demo"
-            }]
-          }
-				]
-        }
-      }
-    }
-  };  
-
-  callSendAPI(messageData);
+function sendDemosMessage(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "Demos",
+					"subtitle": "Send Your Demos Here",
+					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"buttons": [{
+						"type": "web_url",
+						"url": "http://www.eternitynetwork.net",
+						"title": "Submit"
+					}],
+				}]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
 }
-
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
