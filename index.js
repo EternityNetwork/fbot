@@ -38,6 +38,34 @@ app.post('/webhook/', function (req, res) {
 				sendDemosMessage(sender)
 				continue
 			}
+			if (text === 'demos') {
+				sendDemosMessage(sender)
+				continue
+			}
+			if (text === 'Merch') {
+				sendMerchMessage(sender, "Merch is Coming Soon!")
+				continue
+			}
+			if (text === 'merch') {
+				sendMerchMessage(sender, "Merch is Coming Soon!")
+				continue
+			}
+			if (text === 'Hey') {
+				sendMerchMessage(sender, "Hi, how are you?")
+				continue
+			}
+			if (text === 'hey') {
+				sendMerchMessage(sender, "Hi, how are you?")
+				continue
+			}
+			if (text === 'Hello') {
+				sendMerchMessage(sender, "Hey there!")
+				continue
+			}
+			if (text === 'hello') {
+				sendMerchMessage(sender, "Hey there!")
+				continue
+			}
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
@@ -132,7 +160,7 @@ function sendDemosMessage(sender) {
 				"elements": [{
 					"title": "Demos",
 					"subtitle": "Send Your Demos Here",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"image_url": "https://scontent.fath3-2.fna.fbcdn.net/v/t1.0-9/12932665_1673324449584569_136873123934711253_n.jpg?oh=ed904df81533b5f2a9596b163fd54814&oe=589C8B4E",
 					"buttons": [{
 						"type": "web_url",
 						"url": "http://www.eternitynetwork.net",
