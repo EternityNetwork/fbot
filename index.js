@@ -123,6 +123,37 @@ function sendGenericMessage(sender) {
 	})
 }
 
+function sendDemosMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "Demos",
+          elements: [{
+            title: "Demos",
+            subtitle: "Send us your Demos here:",
+            item_url: "http://www.eternitynetwork.net",               
+            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            buttons: [{
+              type: "web_url",
+              url: "http://www.eternitynetwork.net",
+              title: "Submit Your Demo"
+            }]
+          }
+				]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
 // spin spin sugar
 app.listen(app.get('port'), function() {
 	console.log('running on port', app.get('port'))
