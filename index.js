@@ -102,7 +102,6 @@ function sendTextMessage(sender, text) {
 		method: 'POST',
 		json: {
 			recipient: {id:sender},
-			sender_action:typing_on,
 			message: messageData,
 		}
 	}, function(error, response, body) {
