@@ -69,7 +69,6 @@ app.post('/webhook/', function (req, res) {
 				 continue
 			 } else if (text.toLowerCase() === 'savage') {
  				 sendTextMessage(sender, "we are ;)")
-				 continue
  			 } else if (text.toLowerCase() === 'help') {
  				 sendTextMessage(sender, "Type 'Demos' to send us your Music")
 	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
@@ -79,24 +78,8 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			if (text.toLowerCase() === 'demos') {
-				sendDemosMessage(sender)
-				continue
-			} else if (text.toLowerCase() === 'merch') {
-				sendTextMessage(sender, "Merch will be coming really soon :) ")
-				continue
-			} else if (text.toLowerCase() === 'contact') {
-				sendTextMessage(sender, "Hey.")
-				continue
-			} else if (text.toLowerCase() === 'news') {
-				sendTextMessage(sender, "Hey.")
-				continue
-			} else if (text.toLowerCase() === 'help') {
-				sendTextMessage(sender, "Type 'Demos' to send us your Music")
-				sendTextMessage(sender, "Type 'Merch' to view our merchandise")
-				sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
-				sendTextMessage(sender, "Type 'News' to get our latest updates")
-			}
+			sendTextMessage(sender, +text.substring(0, 200), token)
+			continue
 		}
 	}
 	res.sendStatus(200)
