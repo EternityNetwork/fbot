@@ -45,6 +45,10 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "You are very welcome :D ")
 				sendDemosMessage(sender)
 				continue
+			} else if (text.toLowerCase().includes("contact")) {
+				sendTextMessage(sender, "You can message us through here:")
+				sendContactMessage(sender)
+				continue
 			} else if (text.toLowerCase().includes("news")) {
 				sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
 				sendNewsAttachment(sender)
@@ -68,7 +72,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Hey.")
 				continue
 			} else if (text.toLowerCase() === 'hey eternity') {
-				sendTextMessage(sender, "What's up, Stranger?")
+				sendTextMessage(sender, "Whaddup, Stranger?")
 				continue
 			} else if (text.toLowerCase() === 'hello eternity') {
 				sendTextMessage(sender, "Hey there, Stranger.")
@@ -135,6 +139,7 @@ function sendTextMessage(sender, text) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -184,6 +189,7 @@ function sendGenericMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -220,6 +226,44 @@ function sendDemosMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+			sender_action: typing_on,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function sendContactMessage(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "Contact",
+					"subtitle": "Send us a Message through here:",
+					"image_url": "https://scontent.fath3-2.fna.fbcdn.net/v/t1.0-9/12932665_1673324449584569_136873123934711253_n.jpg?oh=ed904df81533b5f2a9596b163fd54814&oe=589C8B4E",
+					"buttons": [{
+						"type": "web_url",
+						"url": "http://www.eternitynetwork.net/contact",
+						"title": "Go"
+					}],
+				}]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -256,6 +300,7 @@ function sendMerchMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -292,6 +337,7 @@ function sendNewsAttachment(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
