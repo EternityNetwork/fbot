@@ -139,7 +139,6 @@ function sendTextMessage(sender, text) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -189,7 +188,6 @@ function sendGenericMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -226,7 +224,6 @@ function sendDemosMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -263,7 +260,6 @@ function sendContactMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -300,7 +296,6 @@ function sendMerchMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
@@ -337,7 +332,6 @@ function sendNewsAttachment(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
-			sender_action: typing_on,
 		}
 	}, function(error, response, body) {
 		if (error) {
