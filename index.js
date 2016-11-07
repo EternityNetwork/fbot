@@ -37,69 +37,40 @@ app.post('/webhook/', function (req, res) {
 			if (text.toLowerCase().includes("demos")) {
 				sendDemosMessage(sender)
 				continue
-			} else if (text === 'Merch') {
+			} else if (text.toLowerCase().includes("merch")) {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
-			} else if (text === 'merch') {
-				sendTextMessage(sender, "Merch will be coming really soon :) ")
-				continue
-			} else if (text === 'Hey') {
+			} else if (text.toLowerCase() === 'hey') {
 				sendTextMessage(sender, "Hello there.")
 				continue
-			} else if (text === 'hey') {
-				sendTextMessage(sender, "Hello there.")
-				continue
-			} else if (text === 'Hello') {
+			} else if (text.toLowerCase() === 'hello') {
 				sendTextMessage(sender, "Hey.")
 				continue
-			} else if (text === 'hello') {
-				sendTextMessage(sender, "Hey.")
-				continue
-			} else if (text === 'Hey Eternity') {
+			} else if (text.toLowerCase() === 'hey eternity') {
 				sendTextMessage(sender, "What's up, Stranger?")
 				continue
-			} else if (text === 'hey Eternity') {
-				sendTextMessage(sender, "What's up, Stranger?")
-				continue
-			} else if (text === 'Hello Eternity') {
+			} else if (text.toLowerCase() === 'hello eternity') {
 				sendTextMessage(sender, "Hey there, Stranger.")
 				continue
-			} else if (text === 'hello Eternity') {
-				sendTextMessage(sender, "Hey there, Stranger.")
-				continue
-			} else if (text === 'Hey eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === 'hey eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === 'Hello eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === 'hello eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === '#eternityfam') {
+			} else if (text.toLowerCase() === '#eternityfam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
-			} else if (text === 'you suck') {
+			} else if (text.toLowerCase() === 'eternityfam') {
+				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
+				continue
+			} else if (text.toLowerCase() === 'eternity fam') {
+				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
+				continue
+			} else if (text.toLowerCase() === 'you suck') {
 				 sendTextMessage(sender, "and you swallow :)")
 				 continue
-			 } else if (text === 'You suck') {
- 				 sendTextMessage(sender, "and you swallow :)")
- 				 continue
- 			 } else if (text === 'You Suck') {
- 				 sendTextMessage(sender, "and you swallow :)")
- 				 continue
- 			 } else if (text === 'Savage') {
+			 } else if (text.toLowerCase() === 'savage') {
  				 sendTextMessage(sender, "we are ;)")
- 				 continue
- 			 } else if (text === 'savage') {
- 				 sendTextMessage(sender, "we are ;)")
+ 			 } else if (text.toLowerCase() === 'help') {
+ 				 sendTextMessage(sender, "Type 'Demos' to send us your Music")
+	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
+	 			 sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
+	 			 sendTextMessage(sender, "Type 'News' to get our latest updates")
  			 }
 		}
 		if (event.postback) {
