@@ -40,6 +40,10 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("demo")) {
 				sendDemosMessage(sender)
 				continue
+			} else if (text.toLowerCase().includes("news")) {
+				sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
+				sendNewsAttachment(sender)
+				continue
 			} else if (text.toLowerCase().includes("merch")) {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
@@ -79,12 +83,21 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
+			
+			if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_DEMOS"}') {
+			sendDemosMessage(sender)
+		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_MERCH"}') {
+			sendTextMessage(sender, "Merch will be coming really soon :) ")
+		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_NEWS"}') {
+			sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
+			sendNewsAttachment(sender)
+		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
 			sendTextMessage(sender, "Type 'Demos' to send us your Music")
-		} else {
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
-			continue
-		}}
+			sendTextMessage(sender, "Type 'Merch' to view our merchandise")
+			sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
+			sendTextMessage(sender, "Type 'News' to get our latest updates")
+		}
+		
 	}
 	res.sendStatus(200)
 })
@@ -177,6 +190,78 @@ function sendDemosMessage(sender) {
 						"type": "web_url",
 						"url": "http://www.eternitynetwork.net",
 						"title": "Submit"
+					}],
+				}]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function sendMerchMessage(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "Demos",
+					"subtitle": "Send Your Demos Here",
+					"image_url": "https://scontent.fath3-2.fna.fbcdn.net/v/t1.0-9/12932665_1673324449584569_136873123934711253_n.jpg?oh=ed904df81533b5f2a9596b163fd54814&oe=589C8B4E",
+					"buttons": [{
+						"type": "web_url",
+						"url": "http://www.eternitynetwork.net",
+						"title": "Submit"
+					}],
+				}]
+			}
+		}
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function sendNewsAttachment(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "Our Latest Upload",
+					"subtitle": "Listen to 'Lust' by Sightlow on Soundcloud",
+					"image_url": "https://i1.sndcdn.com/artworks-000190288127-yzcprt-large.jpg",
+					"buttons": [{
+						"type": "web_url",
+						"url": "https://soundcloud.com/eternitynetwork/lust",
+						"title": "Listen"
 					}],
 				}]
 			}
