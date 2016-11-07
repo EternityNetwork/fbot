@@ -88,13 +88,7 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'eternity fam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
-			} else if (text.toLowerCase() === 'you suck') {
-				 sendTextMessage(sender, "and you swallow :)")
-				 continue
-			 } else if (text.toLowerCase() === 'savage') {
- 				 sendTextMessage(sender, "we are ;)")
-				 continue
- 			 } else if (text.toLowerCase() === 'help') {
+			} else if (text.toLowerCase() === 'help') {
  				 sendTextMessage(sender, "Type 'Demos' to send us your Music")
 	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
 	 			 sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
