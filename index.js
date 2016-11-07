@@ -34,74 +34,48 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			if (text === 'Demos') {
+			if (text.includes.lower() === 'demos') {
 				sendDemosMessage(sender)
 				continue
-			} else if (text === 'demos') {
+			} else if (text.includes.lower() === 'demo') {
 				sendDemosMessage(sender)
 				continue
-			} else if (text === 'Merch') {
+			} else if (text.lower() === 'merch') {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
-			} else if (text === 'merch') {
-				sendTextMessage(sender, "Merch will be coming really soon :) ")
+			} else if (text.lower() === 'help') {
+				sendTextMessage(sender, "Type 'Demos' to send your Demo")
+				sendTextMessage(sender, "Type 'News' to get our latest updates")
+				sendTextMessage(sender, "Type 'Merch' to found out about our merchandise")
+				sendTextMessage(sender, "Type 'Contact' to send us a message")
 				continue
-			} else if (text === 'Hey') {
+			} else if (text.lower() === 'hey') {
 				sendTextMessage(sender, "Hello there.")
 				continue
-			} else if (text === 'hey') {
-				sendTextMessage(sender, "Hello there.")
-				continue
-			} else if (text === 'Hello') {
+			} else if (text.lower() === 'hello') {
 				sendTextMessage(sender, "Hey.")
 				continue
-			} else if (text === 'hello') {
-				sendTextMessage(sender, "Hey.")
-				continue
-			} else if (text === 'Hey Eternity') {
+			} else if (text.lower() === 'hey Eternity') {
 				sendTextMessage(sender, "What's up, Stranger?")
 				continue
-			} else if (text === 'hey Eternity') {
-				sendTextMessage(sender, "What's up, Stranger?")
-				continue
-			} else if (text === 'Hello Eternity') {
+			} else if (text.lower() === 'hello Eternity') {
 				sendTextMessage(sender, "Hey there, Stranger.")
 				continue
-			} else if (text === 'hello Eternity') {
-				sendTextMessage(sender, "Hey there, Stranger.")
-				continue
-			} else if (text === 'Hey eternity') {
+			} else if (text.lower() === 'hey eternity') {
 				sendTextMessage(sender, "lol")
 					sendTextMessage(sender, "*Eternity")
 				continue
-			} else if (text === 'hey eternity') {
+			} else if (text.lower() === 'hello eternity') {
 				sendTextMessage(sender, "lol")
 					sendTextMessage(sender, "*Eternity")
 				continue
-			} else if (text === 'Hello eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === 'hello eternity') {
-				sendTextMessage(sender, "lol")
-					sendTextMessage(sender, "*Eternity")
-				continue
-			} else if (text === '#eternityfam') {
+			} else if (text.lower() === '#eternityfam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
-			} else if (text === 'you suck') {
+			} else if (text.lower() === 'you suck') {
 				 sendTextMessage(sender, "and you swallow :)")
 				 continue
-			 } else if (text === 'You suck') {
- 				 sendTextMessage(sender, "and you swallow :)")
- 				 continue
- 			 } else if (text === 'You Suck') {
- 				 sendTextMessage(sender, "and you swallow :)")
- 				 continue
- 			 } else if (text === 'Savage') {
- 				 sendTextMessage(sender, "we are ;)")
- 				 continue
- 			 } else if (text === 'savage') {
+			 } else if (text.lower() === 'savage') {
  				 sendTextMessage(sender, "we are ;)")
  			 }
 		}
@@ -117,7 +91,7 @@ app.post('/webhook/', function (req, res) {
 
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.PAGE_ACCESS_TOKEN
-const token = "EAASQ8TmaZChUBAPDtDM9wgkH8MMq1wLpARTIilhVxuzE26eopD0Mx7QhSsvEei63oNdqEFvyyJ1xYvjgXdM7pZCqBdjDknAk6LKzyY35lAbzCtZCRqrsQdSnGjFvb7uKfpKu4PqIzYXmxbREzsHFkgYSImQOVNsZAU1esRQksAZDZD"
+const token = "EAAXEBS5Tr1ABAA3HPs4Q9hrrxiFZCJjW6JPnp0PZC7pSpeZBKUbNpfeI6jfsOnFXaItAIeZCncHbQmNoR32eGScoxw5B0eNX77MAmXnjVn1bD8tgHeWlIvzyk5ZAxenHx9Uusz6YEbkNs4NH4Emf1eO5XrOUyZCAhEqdqB7bpzwwZDZD"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
