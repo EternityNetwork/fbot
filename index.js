@@ -34,13 +34,10 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			if (text === 'Demos') {
+			if (text.lower() === 'demos') {
 				sendDemosMessage(sender)
 				continue
-			} else if (text === 'demos') {
-				sendDemosMessage(sender)
-				continue
-			} else if (text === 'Merch') {
+			}else if (text === 'Merch') {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
 			} else if (text === 'merch') {
