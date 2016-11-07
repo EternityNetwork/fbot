@@ -69,6 +69,7 @@ app.post('/webhook/', function (req, res) {
 				 continue
 			 } else if (text.toLowerCase() === 'savage') {
  				 sendTextMessage(sender, "we are ;)")
+				 continue
  			 } else if (text.toLowerCase() === 'help') {
  				 sendTextMessage(sender, "Type 'Demos' to send us your Music")
 	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
@@ -78,9 +79,12 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, +text.substring(0, 200), token)
+			if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
+			sendTextMessage(sender, "Type 'Demos' to send us your Music")
+		} else {
+			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
 			continue
-		}
+		}}
 	}
 	res.sendStatus(200)
 })
