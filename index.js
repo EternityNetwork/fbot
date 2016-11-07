@@ -37,6 +37,9 @@ app.post('/webhook/', function (req, res) {
 			if (text.toLowerCase().includes("demos")) {
 				sendDemosMessage(sender)
 				continue
+			} else if (text.toLowerCase().includes("demo")) {
+				sendDemosMessage(sender)
+				continue
 			} else if (text.toLowerCase().includes("merch")) {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
@@ -72,11 +75,6 @@ app.post('/webhook/', function (req, res) {
 	 			 sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
 	 			 sendTextMessage(sender, "Type 'News' to get our latest updates")
  			 }
-		}
-		if (event.postback) {
-			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
-			continue
 		}
 	}
 	res.sendStatus(200)
