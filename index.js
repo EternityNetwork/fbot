@@ -90,13 +90,15 @@ app.post('/webhook/', function (req, res) {
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_NEWS"}') {
 			sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
 			sendNewsAttachment(sender)
+		} else if (text.substring(0, 200) === '{"payload":"USER_DEFINED_PAYLOAD"}') {
+			sendTextMessage(sender, "Hello there {{user_first_name}}. Welcome to our Facebook Bot. Type 'Help' to view the available commands")
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
 			sendTextMessage(sender, "Type 'Demos' to send us your Music")
 			sendTextMessage(sender, "Type 'Merch' to view our merchandise")
-			sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
+			sendTextMessage(sender, "Type 'Contact' to message on of our Team Members") 
 			sendTextMessage(sender, "Type 'News' to get our latest updates")
 		} else {
-			sendTextMessage(sender, "Postback received: ", token)
+			sendTextMessage(sender, "Postback received.", token)
 			continue
 		}
 	}}
