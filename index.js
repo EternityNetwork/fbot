@@ -38,6 +38,11 @@ app.post('/webhook/', function (req, res) {
 				sendDemosMessage(sender)
 				continue
 			} else if (text.toLowerCase().includes("demo")) {
+				sendTextMessage(sender, "Feel free to submit your track here:")
+				sendDemosMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("thanks")) {
+				sendTextMessage(sender, "You are very welcome :D ")
 				sendDemosMessage(sender)
 				continue
 			} else if (text.toLowerCase().includes("news")) {
@@ -49,6 +54,15 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase() === 'hey') {
 				sendTextMessage(sender, "Hello there.")
+				continue
+			} else if (text.toLowerCase() === 'how are you') {
+				sendTextMessage(sender, "We're doing great. How about you?")
+				continue
+			} else if (text.toLowerCase() === 'how are you doing') {
+				sendTextMessage(sender, "We're doing great. How about you?")
+				continue
+			} else if (text.toLowerCase() === 'what are you up to') {
+				sendTextMessage(sender, "We are currently planning our next Releases and working on our Website. Thank you for asking")
 				continue
 			} else if (text.toLowerCase() === 'hello') {
 				sendTextMessage(sender, "Hey.")
@@ -84,6 +98,7 @@ app.post('/webhook/', function (req, res) {
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
 			if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_DEMOS"}') {
+			sendTextMessage(sender, "Feel free to submit your track here:")
 			sendDemosMessage(sender)
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_MERCH"}') {
 			sendTextMessage(sender, "Merch will be coming really soon :) ")
@@ -91,7 +106,7 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
 			sendNewsAttachment(sender)
 		} else if (text.substring(0, 200) === '{"payload":"USER_DEFINED_PAYLOAD"}') {
-			sendTextMessage(sender, "Hello there {{user_first_name}}. Welcome to our Facebook Bot. Type 'Help' to view the available commands")
+			sendTextMessage(sender, "Hello there. Welcome to our Facebook Bot. Type 'Help' to view the available commands")
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
 			sendTextMessage(sender, "Type 'Demos' to send us your Music")
 			sendTextMessage(sender, "Type 'Merch' to view our merchandise")
@@ -260,7 +275,7 @@ function sendNewsAttachment(sender) {
 				"elements": [{
 					"title": "Our Latest Upload",
 					"subtitle": "Listen to 'Lust' by Sightlow on Soundcloud",
-					"image_url": "https://i1.sndcdn.com/artworks-000190288127-yzcprt-large.jpg",
+					"image_url": "https://i1.sndcdn.com/artworks-000190288127-yzcprt-original.jpg",
 					"buttons": [{
 						"type": "web_url",
 						"url": "https://soundcloud.com/eternitynetwork/lust",
