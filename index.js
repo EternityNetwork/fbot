@@ -116,7 +116,7 @@ app.post('/webhook/', function (req, res) {
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"}') {
 			sendTextMessage(sender, "Type 'Demos' to send us your Music")
 			sendTextMessage(sender, "Type 'Merch' to view our merchandise")
-			sendTextMessage(sender, "Type 'Contact' to message on of our Team Members") 
+			sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
 			sendTextMessage(sender, "Type 'News' to get our latest updates")
 		} else {
 			sendTextMessage(sender, "Postback received.", token)
