@@ -43,7 +43,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("thanks")) {
 				sendTextMessage(sender, "You are very welcome :D ")
-				sendDemosMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("thank you")) {
+				sendTextMessage(sender, "You are very welcome :D ")
 				continue
 			} else if (text.toLowerCase().includes("contact")) {
 				sendTextMessage(sender, "You can message us through here:")
