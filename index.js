@@ -83,7 +83,6 @@ app.post('/webhook/', function (req, res) {
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			
 			if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_DEMOS"}') {
 			sendDemosMessage(sender)
 		} else if (text.substring(0, 200) === '{"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_MERCH"}') {
@@ -100,7 +99,7 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Postback received: ", token)
 			continue
 		}
-	}
+	}}
 	res.sendStatus(200)
 })
 
