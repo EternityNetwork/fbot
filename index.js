@@ -184,6 +184,15 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("hi ")) {
 				sendTextMessage(sender, "hey")
 				continue
+			} else if (text.toLowerCase().includes("hi,")) {
+				sendTextMessage(sender, "hey")
+				continue
+			} else if (text.toLowerCase().includes("hi.")) {
+				sendTextMessage(sender, "hey")
+				continue
+			} else if (text.toLowerCase().includes("hi!")) {
+				sendTextMessage(sender, "hey")
+				continue
 			} else if (text.toLowerCase().includes("hey")) {
 				sendTextMessage(sender, "Hellooo")
 				continue
