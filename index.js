@@ -182,7 +182,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, ":'(")
 				continue
 			} else if (text.toLowerCase().includes("bitch")) {
-				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				sendTextMessage(sender, "Didn't your parents tell you not to talk like that?")
 				continue
 			} else if (text.toLowerCase().includes("hi ")) {
 				sendTextMessage(sender, "hey")
@@ -203,7 +203,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Hi there.")
 				continue
 			} else if (text.toLowerCase().includes("pussy")) {
-				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				sendTextMessage(sender, "Aren't you a bit too young to talk like that?")
 				continue
 			} else if (text.toLowerCase().includes("thank you")) {
 				sendTextMessage(sender, "You are very welcome :D ")
