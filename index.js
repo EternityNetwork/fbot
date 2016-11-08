@@ -105,6 +105,12 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'awesome') {
 				sendTextMessage(sender, "Great")
 				continue
+			} else if (text.toLowerCase() === 'sup') {
+				sendTextMessage(sender, "Not much homie, how are u?")
+				continue
+			} else if (text.toLowerCase() === 'snob') {
+				sendTextMessage(sender, "We may be")
+				continue
 			} else if (text.toLowerCase() === 'eternity fam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
@@ -118,6 +124,9 @@ app.post('/webhook/', function (req, res) {
 	 			 sendTextMessage(sender, "Type 'News' to get our latest updates")
  			 } else if (text.toLowerCase().includes("long") && text.toLowerCase().includes("demo")) {
 				sendTextMessage(sender, "Due to the big amount of mails we get from you guys, we usually reply to demos after around 1 week")
+				continue
+			} else if (text.toLowerCase().includes("nigga")) {
+				sendTextMessage(sender, ".")
 				continue
 			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("morning")) {
 				sendTextMessage(sender, "You too :)")
@@ -183,6 +192,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("bitch")) {
 				sendTextMessage(sender, "Didn't your parents tell you not to talk like that?")
+				continue
+			} else if (text.toLowerCase().includes("sup ")) {
+				sendTextMessage(sender, "Waddup boi")
 				continue
 			} else if (text.toLowerCase().includes("hi ")) {
 				sendTextMessage(sender, "hey")
