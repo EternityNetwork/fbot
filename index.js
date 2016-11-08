@@ -60,9 +60,6 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'suck') {
 				sendTextMessage(sender, "And you swallow :)")
 				continue
-			} else if (text.toLowerCase() === 'savage') {
-				sendTextMessage(sender, "We are ;)")
-				continue
 			} else if (text.toLowerCase() === 'dab') {
 				sendTextMessage(sender, "Please don't")
 				continue
@@ -168,6 +165,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("thanks")) {
 				sendTextMessage(sender, "You are very welcome :D ")
+				continue
+			} else if (text.toLowerCase().includes("savage")) {
+				sendTextMessage(sender, "We are ;)")
 				continue
 			} else if (text.toLowerCase().includes("fuck")) {
 				sendTextMessage(sender, "God is listening, watch your mouth xD")
