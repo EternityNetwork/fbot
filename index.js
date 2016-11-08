@@ -73,6 +73,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("goin")) {
 				sendTextMessage(sender, "Things are going great, thank you for asking")
 				continue
+			} else if (text.toLowerCase().includes("eternity") && text.toLowerCase().includes("is the best")) {
+				sendTextMessage(sender, "You said it <3")
+				continue
 			} else if (text.toLowerCase().includes("fine")) {
 				sendTextMessage(sender, "Cool")
 				continue
@@ -87,6 +90,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("are you from")) {
 				sendTextMessage(sender, "We're based on Athens, Greece.")
+				continue
+			} else if (text.toLowerCase().includes("is the best")) {
+				sendTextMessage(sender, "I doubt that :')")
 				continue
 			} else if (text.toLowerCase() === 'ok') {
 				sendTextMessage(sender, "(y)")
@@ -108,6 +114,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase() === 'answer') {
 				sendTextMessage(sender, "WHAT IF I DON'T WANT TO")
+				continue
+			} else if (text.toLowerCase() === ':(') {
+				sendTextMessage(sender, ":)")
 				continue
 			} else if (text.toLowerCase() === 'lmao') {
 				sendTextMessage(sender, "lol")
