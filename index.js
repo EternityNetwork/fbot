@@ -57,9 +57,6 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === '.....') {
 				sendTextMessage(sender, "................................")
 				continue
-			} else if (text.toLowerCase() === 'suck') {
-				sendTextMessage(sender, "And you swallow :)")
-				continue
 			} else if (text.toLowerCase() === 'dab') {
 				sendTextMessage(sender, "Please don't")
 				continue
@@ -114,6 +111,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'eternity fam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
+			} else if (text.toLowerCase() === 'no') {
+				sendTextMessage(sender, "Ookie :(")
+				continue
 			} else if (text.toLowerCase() === 'hi') {
 				sendTextMessage(sender, "Hey")
 				continue
@@ -125,11 +125,21 @@ app.post('/webhook/', function (req, res) {
  			 } else if (text.toLowerCase().includes("long") && text.toLowerCase().includes("demo")) {
 				sendTextMessage(sender, "Due to the big amount of mails we get from you guys, we usually reply to demos after around 1 week")
 				continue
+			} else if (text.toLowerCase().includes("suck")) {
+				sendTextMessage(sender, "And you swallow :)")
+				continue
 			} else if (text.toLowerCase().includes("nigga")) {
 				sendTextMessage(sender, ".")
 				continue
+			} else if (text.toLowerCase().includes("free") && text.toLowerCase().includes("promo")) {
+				sendTextMessage(sender, "Get your Free Promotion while it's hot:")
+				sendTextMessage(sender, "www.eternitynetwork.net/free-promo")
+				continue
 			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("morning")) {
 				sendTextMessage(sender, "You too :)")
+				continue
+			}else if (text.toLowerCase().includes("what") && text.toLowerCase().includes("up")) {
+				sendTextMessage(sender, "Not much homie, how about you?")
 				continue
 			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("day")) {
 				sendTextMessage(sender, "Today was great! How was your day?")
