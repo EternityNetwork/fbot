@@ -44,6 +44,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("thanks")) {
 				sendTextMessage(sender, "You are very welcome :D ")
 				continue
+			} else if (text.toLowerCase().includes("fuck")) {
+				sendTextMessage(sender, "")
+				continue
 			} else if (text.toLowerCase().includes("thank you")) {
 				sendTextMessage(sender, "You are very welcome :D ")
 				continue
@@ -58,8 +61,53 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("merch")) {
 				sendTextMessage(sender, "Merch will be coming really soon :) ")
 				continue
+			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("goin")) {
+				sendTextMessage(sender, "Things are going great, thank you for asking")
+				continue
+			} else if (text.toLowerCase().includes("fine")) {
+				sendTextMessage(sender, "Cool")
+				continue
+			} else if (text.toLowerCase().includes("how you doin")) {
+				sendTextMessage(sender, "We're doing great. How about you?")
+				continue
+			} else if (text.toLowerCase().includes("xmas")) {
+				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
+				continue
+			} else if (text.toLowerCase().includes("christmas")) {
+				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
+				continue
+			} else if (text.toLowerCase().includes("are you from")) {
+				sendTextMessage(sender, "We're based on Athens, Greece.")
+				continue
+			} else if (text.toLowerCase() === 'ok') {
+				sendTextMessage(sender, "(y)")
+				continue
+			} else if (text.toLowerCase() === '.') {
+				sendTextMessage(sender, "..")
+				continue
+			} else if (text.toLowerCase() === '...') {
+				sendTextMessage(sender, "....")
+				continue
+			} else if (text.toLowerCase() === '.....') {
+				sendTextMessage(sender, "................................")
+				continue
 			} else if (text.toLowerCase() === 'hey') {
 				sendTextMessage(sender, "Hello there.")
+				continue
+			} else if (text.toLowerCase() === 'lol') {
+				sendTextMessage(sender, "xD")
+				continue
+			} else if (text.toLowerCase() === 'answer') {
+				sendTextMessage(sender, "WHAT IF I DON'T WANT TO")
+				continue
+			} else if (text.toLowerCase() === 'lmao') {
+				sendTextMessage(sender, "lol")
+				continue
+			} else if (text.toLowerCase() === 'lmao xd') {
+				sendTextMessage(sender, "lel")
+				continue
+			} else if (text.toLowerCase() === 'hi') {
+				sendTextMessage(sender, "Hey.")
 				continue
 			} else if (text.toLowerCase() === 'how are you') {
 				sendTextMessage(sender, "We're doing great. How about you?")
@@ -71,7 +119,7 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "We are currently planning our next Releases and working on our Website. Thank you for asking")
 				continue
 			} else if (text.toLowerCase() === 'hello') {
-				sendTextMessage(sender, "Hey.")
+				sendTextMessage(sender, "Hey there.")
 				continue
 			} else if (text.toLowerCase() === 'hey eternity') {
 				sendTextMessage(sender, "Whaddup, Stranger?")
