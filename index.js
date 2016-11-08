@@ -53,6 +53,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase().includes("fuck")) {
 				sendTextMessage(sender, "God is listening, watch your mouth xD")
 				continue
+			} else if (text.toLowerCase().includes("pussy")) {
+				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				continue
 			} else if (text.toLowerCase().includes("thank you")) {
 				sendTextMessage(sender, "You are very welcome :D ")
 				continue
