@@ -75,6 +75,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === ':)') {
 				sendTextMessage(sender, ":D")
 				continue
+			} else if (text.toLowerCase() === '<3') {
+				sendTextMessage(sender, "<3")
+				continue
 			} else if (text.toLowerCase() === ":'(") {
 				sendTextMessage(sender, ":)")
 				continue
