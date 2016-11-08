@@ -99,6 +99,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'nice') {
 				sendTextMessage(sender, "Awesome")
 				continue
+			} else if (text.toLowerCase() === 'yo') {
+				sendTextMessage(sender, "Yoo")
+				continue
 			} else if (text.toLowerCase() === 'awesome') {
 				sendTextMessage(sender, "Great")
 				continue
@@ -143,9 +146,6 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("day")) {
 				sendTextMessage(sender, "Today was great! How was your day?")
-				continue
-			} else if (text.toLowerCase().includes("yo")) {
-				sendTextMessage(sender, "Yoooo")
 				continue
 			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("night")) {
 				sendTextMessage(sender, "You too :)")
