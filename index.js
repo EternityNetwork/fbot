@@ -34,10 +34,16 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			if (text.toLowerCase().includes("demos")) {
-				sendDemosMessage(sender)
+			if (text.toLowerCase().includes("genres")) {
+				sendTextMessage(sender, "We generally accept every kind of track. Feel free to submit ;)")
+				sendTextMessage(sender, "Here is an example:")
+				sendNewsAttachment(sender)
 				continue
 			} else if (text.toLowerCase().includes("demo")) {
+				sendTextMessage(sender, "Feel free to submit your track here:")
+				sendDemosMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("demos")) {
 				sendTextMessage(sender, "Feel free to submit your track here:")
 				sendDemosMessage(sender)
 				continue
@@ -56,10 +62,6 @@ app.post('/webhook/', function (req, res) {
 				continue
 			} else if (text.toLowerCase().includes("news")) {
 				sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
-				sendNewsAttachment(sender)
-				continue
-			} else if (text.toLowerCase().includes("genres")) {
-				sendTextMessage(sender, "We generally accept every kind of track. Feel free to submit ;)")
 				sendNewsAttachment(sender)
 				continue
 			} else if (text.toLowerCase().includes("merch")) {
