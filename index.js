@@ -39,72 +39,11 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Here is an example:")
 				sendNewsAttachment(sender)
 				continue
-			} else if (text.toLowerCase().includes("long") && text.toLowerCase().includes("demo")) {
-				sendTextMessage(sender, "Due to the big amount of mails we get from you guys, we usually reply to demos after around 1 week")
+			} else if (text.toLowerCase() === 'hey eternity') {
+				sendTextMessage(sender, "Whaddup, Stranger?")
 				continue
-			} else if (text.toLowerCase().includes("demo")) {
-				sendTextMessage(sender, "Feel free to submit your track here:")
-				sendDemosMessage(sender)
-				continue
-			} else if (text.toLowerCase().includes("demos")) {
-				sendTextMessage(sender, "Feel free to submit your track here:")
-				sendDemosMessage(sender)
-				continue
-			} else if (text.toLowerCase().includes("thanks")) {
-				sendTextMessage(sender, "You are very welcome :D ")
-				continue
-			} else if (text.toLowerCase().includes("fuck")) {
-				sendTextMessage(sender, "God is listening, watch your mouth xD")
-				continue
-			} else if (text.toLowerCase().includes("shit")) {
-				sendTextMessage(sender, "You shouldn't say that :')")
-				continue
-			} else if (text.toLowerCase().includes("stfu")) {
-				sendTextMessage(sender, ":'(")
-				continue
-			} else if (text.toLowerCase().includes("bitch")) {
-				sendTextMessage(sender, "God is listening, watch your mouth xD")
-				continue
-			} else if (text.toLowerCase().includes("pussy")) {
-				sendTextMessage(sender, "God is listening, watch your mouth xD")
-				continue
-			} else if (text.toLowerCase().includes("thank you")) {
-				sendTextMessage(sender, "You are very welcome :D ")
-				continue
-			} else if (text.toLowerCase().includes("contact")) {
-				sendTextMessage(sender, "You can message us through here:")
-				sendContactMessage(sender)
-				continue
-			} else if (text.toLowerCase().includes("news")) {
-				sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
-				sendNewsAttachment(sender)
-				continue
-			} else if (text.toLowerCase().includes("merch")) {
-				sendTextMessage(sender, "Merch will be coming really soon :) ")
-				continue
-			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("goin")) {
-				sendTextMessage(sender, "Things are going great, thank you for asking")
-				continue
-			} else if (text.toLowerCase().includes("eternity") && text.toLowerCase().includes("is the best")) {
-				sendTextMessage(sender, "You said it <3")
-				continue
-			} else if (text.toLowerCase().includes("fine")) {
-				sendTextMessage(sender, "Cool")
-				continue
-			} else if (text.toLowerCase().includes("how you doin")) {
-				sendTextMessage(sender, "We're doing great. How about you?")
-				continue
-			} else if (text.toLowerCase().includes("xmas")) {
-				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
-				continue
-			} else if (text.toLowerCase().includes("christmas")) {
-				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
-				continue
-			} else if (text.toLowerCase().includes("are you from")) {
-				sendTextMessage(sender, "We're based on Athens, Greece.")
-				continue
-			} else if (text.toLowerCase().includes("is the best")) {
-				sendTextMessage(sender, "I doubt that :')")
+			} else if (text.toLowerCase() === 'hello eternity') {
+				sendTextMessage(sender, "Hey there, Stranger.")
 				continue
 			} else if (text.toLowerCase() === 'ok') {
 				sendTextMessage(sender, "(y)")
@@ -118,8 +57,11 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === '.....') {
 				sendTextMessage(sender, "................................")
 				continue
-			} else if (text.toLowerCase() === 'hey') {
-				sendTextMessage(sender, "Hello there.")
+			} else if (text.toLowerCase() === 'suck') {
+				sendTextMessage(sender, "And you swallow :)")
+				continue
+			} else if (text.toLowerCase() === 'savage') {
+				sendTextMessage(sender, "We are ;)")
 				continue
 			} else if (text.toLowerCase() === 'dab') {
 				sendTextMessage(sender, "Please don't")
@@ -145,26 +87,8 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'lmao xd') {
 				sendTextMessage(sender, "lel")
 				continue
-			} else if (text.toLowerCase() === 'hi') {
-				sendTextMessage(sender, "Hey.")
-				continue
-			} else if (text.toLowerCase() === 'how are you') {
-				sendTextMessage(sender, "We're doing great. How about you?")
-				continue
-			} else if (text.toLowerCase() === 'how are you doing') {
-				sendTextMessage(sender, "We're doing great. How about you?")
-				continue
 			} else if (text.toLowerCase() === 'what are you up to') {
 				sendTextMessage(sender, "We are currently planning our next Releases and working on our Website. Thank you for asking")
-				continue
-			} else if (text.toLowerCase() === 'hello') {
-				sendTextMessage(sender, "Hey there.")
-				continue
-			} else if (text.toLowerCase() === 'hey eternity') {
-				sendTextMessage(sender, "Whaddup, Stranger?")
-				continue
-			} else if (text.toLowerCase() === 'hello eternity') {
-				sendTextMessage(sender, "Hey there, Stranger.")
 				continue
 			} else if (text.toLowerCase() === '#eternityfam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
@@ -189,7 +113,122 @@ app.post('/webhook/', function (req, res) {
 	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
 	 			 sendTextMessage(sender, "Type 'Contact' to message one of our Team Members")
 	 			 sendTextMessage(sender, "Type 'News' to get our latest updates")
- 			 }
+ 			 } else if (text.toLowerCase().includes("long") && text.toLowerCase().includes("demo")) {
+				sendTextMessage(sender, "Due to the big amount of mails we get from you guys, we usually reply to demos after around 1 week")
+				continue
+			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("morning")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("night")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("good") && text.toLowerCase().includes("afternoon")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("great") && text.toLowerCase().includes("morning")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("great") && text.toLowerCase().includes("night")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("great") && text.toLowerCase().includes("afternoon")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("awesome") && text.toLowerCase().includes("morning")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("awesome") && text.toLowerCase().includes("night")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("awesome") && text.toLowerCase().includes("afternoon")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("nice") && text.toLowerCase().includes("morning")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("nice") && text.toLowerCase().includes("night")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("nice") && text.toLowerCase().includes("afternoon")) {
+				sendTextMessage(sender, "You too :)")
+				continue
+			} else if (text.toLowerCase().includes("demo")) {
+				sendTextMessage(sender, "Feel free to submit your track here:")
+				sendDemosMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("demos")) {
+				sendTextMessage(sender, "Feel free to submit your track here:")
+				sendDemosMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("thanks")) {
+				sendTextMessage(sender, "You are very welcome :D ")
+				continue
+			} else if (text.toLowerCase().includes("fuck")) {
+				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				continue
+			} else if (text.toLowerCase().includes("shit")) {
+				sendTextMessage(sender, "You shouldn't say that :')")
+				continue
+			} else if (text.toLowerCase().includes("stfu")) {
+				sendTextMessage(sender, ":'(")
+				continue
+			} else if (text.toLowerCase().includes("bitch")) {
+				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				continue
+			} else if (text.toLowerCase().includes("hi")) {
+				sendTextMessage(sender, "hey")
+				continue
+			} else if (text.toLowerCase().includes("hey")) {
+				sendTextMessage(sender, "Hellooo")
+				continue
+			} else if (text.toLowerCase().includes("hello")) {
+				sendTextMessage(sender, "Hi there.")
+				continue
+			} else if (text.toLowerCase().includes("pussy")) {
+				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				continue
+			} else if (text.toLowerCase().includes("thank you")) {
+				sendTextMessage(sender, "You are very welcome :D ")
+				continue
+			} else if (text.toLowerCase().includes("contact")) {
+				sendTextMessage(sender, "You can message us through here:")
+				sendContactMessage(sender)
+				continue
+			} else if (text.toLowerCase().includes("news")) {
+				sendTextMessage(sender, "We recently uploaded a really chill track by Sightlow called Lust. It's one of our few chill uploads but it's 100% worth it. We advise you to go listen to it because it is one of our best uploads so far.")
+				sendNewsAttachment(sender)
+				continue
+			} else if (text.toLowerCase().includes("merch")) {
+				sendTextMessage(sender, "Merch will be coming really soon :) ")
+				continue
+			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("goin")) {
+				sendTextMessage(sender, "Things are going great, thank you for asking")
+				continue
+			} else if (text.toLowerCase().includes("how") && text.toLowerCase().includes("you")) {
+				sendTextMessage(sender, "We're doing great. How about you?")
+				continue
+			} else if (text.toLowerCase().includes("eternity") && text.toLowerCase().includes("is the best")) {
+				sendTextMessage(sender, "You said it <3")
+				continue
+			} else if (text.toLowerCase().includes("fine")) {
+				sendTextMessage(sender, "Cool")
+				continue
+			} else if (text.toLowerCase().includes("how you doin")) {
+				sendTextMessage(sender, "We're doing great. How about you?")
+				continue
+			} else if (text.toLowerCase().includes("xmas")) {
+				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
+				continue
+			} else if (text.toLowerCase().includes("christmas")) {
+				sendTextMessage(sender, "We've got some plan for Xmass, but you'll have to wait :3")
+				continue
+			} else if (text.toLowerCase().includes("are you from")) {
+				sendTextMessage(sender, "We're based on Athens, Greece.")
+				continue
+			} else if (text.toLowerCase().includes("is the best")) {
+				sendTextMessage(sender, "I doubt that :')")
+				continue
+			}
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
