@@ -39,6 +39,9 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "Here is an example:")
 				sendNewsAttachment(sender)
 				continue
+			} else if (text.toLowerCase().includes("long") && text.toLowerCase().includes("demo")) {
+				sendTextMessage(sender, "Due to the big amount of mails we get from you guys, we usually reply to demos after around 1 week")
+				continue
 			} else if (text.toLowerCase().includes("demo")) {
 				sendTextMessage(sender, "Feel free to submit your track here:")
 				sendDemosMessage(sender)
@@ -51,6 +54,15 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "You are very welcome :D ")
 				continue
 			} else if (text.toLowerCase().includes("fuck")) {
+				sendTextMessage(sender, "God is listening, watch your mouth xD")
+				continue
+			} else if (text.toLowerCase().includes("shit")) {
+				sendTextMessage(sender, "You shouldn't say that :')")
+				continue
+			} else if (text.toLowerCase().includes("stfu")) {
+				sendTextMessage(sender, ":'(")
+				continue
+			} else if (text.toLowerCase().includes("bitch")) {
 				sendTextMessage(sender, "God is listening, watch your mouth xD")
 				continue
 			} else if (text.toLowerCase().includes("pussy")) {
@@ -109,6 +121,9 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'hey') {
 				sendTextMessage(sender, "Hello there.")
 				continue
+			} else if (text.toLowerCase() === 'dab') {
+				sendTextMessage(sender, "Please don't")
+				continue
 			} else if (text.toLowerCase() === 'lol') {
 				sendTextMessage(sender, "xD")
 				continue
@@ -116,6 +131,12 @@ app.post('/webhook/', function (req, res) {
 				sendTextMessage(sender, "WHAT IF I DON'T WANT TO")
 				continue
 			} else if (text.toLowerCase() === ':(') {
+				sendTextMessage(sender, ":)")
+				continue
+			} else if (text.toLowerCase() === ':)') {
+				sendTextMessage(sender, ":D")
+				continue
+			} else if (text.toLowerCase() === ":'(") {
 				sendTextMessage(sender, ":)")
 				continue
 			} else if (text.toLowerCase() === 'lmao') {
@@ -151,13 +172,22 @@ app.post('/webhook/', function (req, res) {
 			} else if (text.toLowerCase() === 'eternityfam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
+			} else if (text.toLowerCase() === 'great') {
+				sendTextMessage(sender, "Perfect")
+				continue
+			} else if (text.toLowerCase() === 'nice') {
+				sendTextMessage(sender, "Awesome")
+				continue
+			} else if (text.toLowerCase() === 'awesome') {
+				sendTextMessage(sender, "Great")
+				continue
 			} else if (text.toLowerCase() === 'eternity fam') {
 				sendTextMessage(sender, "ETERNITY FAM IS LIT AF <3")
 				continue
 			} else if (text.toLowerCase() === 'help') {
  				 sendTextMessage(sender, "Type 'Demos' to send us your Music")
 	 			 sendTextMessage(sender, "Type 'Merch' to view our merchandise")
-	 			 sendTextMessage(sender, "Type 'Contact' to message on of our Team Members")
+	 			 sendTextMessage(sender, "Type 'Contact' to message one of our Team Members")
 	 			 sendTextMessage(sender, "Type 'News' to get our latest updates")
  			 }
 		}
